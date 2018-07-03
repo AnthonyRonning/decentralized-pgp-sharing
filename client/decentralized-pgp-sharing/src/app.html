@@ -1,0 +1,21 @@
+<template>
+  <h1>${header}</h1>
+
+  <h2>Enter a Bitcoin DID method ID</h2>
+  <form submit.trigger="resolveDid()">
+    <label repeat.for="option of someOptions">
+      <input type="radio"
+             value.bind="option"
+             name="testOptions"
+             checked.bind="$parent.selectedChain">
+      ${option}
+    </label>
+    <input type="text" value.bind="didMethodText">
+    <button type="submit">Resolve DID</button>
+  </form>
+
+
+  <h3>DID Method: ${didMethod}</h3>
+  <div id="pgp" style.bind="styleString">
+  </div>
+</template>
